@@ -5,7 +5,7 @@ set backupcmd=xcopy /s /c /d /h /i /r /y /q
 echo off 
 
 echo.
-echo Sea Vacuum v1.1
+echo USB-Switchblade
 echo For personal use only
 echo.
 timeout 5
