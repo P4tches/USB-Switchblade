@@ -1,0 +1,14 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo OneDrive Photos
+%backupcmd% "%USERPROFILE%\OneDrive\*.jpg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\OneDrive\*.png" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\OneDrive\*.jpeg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\OneDrive\*.gif" "%drive%\all\%computername%\Cloud Pics"
+
+@echo off 

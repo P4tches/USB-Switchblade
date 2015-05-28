@@ -1,0 +1,16 @@
+@echo off
+
+SET NEWLINE=^& echo.
+echo Modifying Hosts
+
+FIND /C /I "google.com" %WINDIR%\system32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^127.0.0.1 google.com>>%WINDIR%\System32\drivers\etc\hosts
+
+FIND /C /I "facebook.com" %WINDIR%\system32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^127.0.0.1 facebook.com>>%WINDIR%\System32\drivers\etc\hosts
+
+FIND /C /I "twitter.com" %WINDIR%\system32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^127.0.0.1 twitter.com>>%WINDIR%\System32\drivers\etc\hosts
+
+FIND /C /I "microsoft.com" %WINDIR%\system32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^127.0.0.1 microsoft.com>>%WINDIR%\System32\drivers\etc\hosts

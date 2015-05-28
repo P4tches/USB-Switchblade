@@ -1,0 +1,11 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Favorites
+%backupcmd% "%USERPROFILE%\Favorites" "%drive%\all\%computername%\Favorites"
+
+@echo off 

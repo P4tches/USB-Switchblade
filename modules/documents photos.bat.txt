@@ -1,0 +1,14 @@
+@echo off 
+:: variables
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Documents Photos
+%backupcmd% "%USERPROFILE%\Documents\*.jpg" "%drive%\all\%computername%\Search Pics"
+%backupcmd% "%USERPROFILE%\Documents\*.png" "%drive%\all\%computername%\Search Pics"
+%backupcmd% "%USERPROFILE%\Documents\*.jpeg" "%drive%\all\%computername%\Search Pics"
+%backupcmd% "%USERPROFILE%\Documents\*.gif" "%drive%\all\%computername%\Search Pics"
+
+@echo off 

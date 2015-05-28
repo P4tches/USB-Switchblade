@@ -1,0 +1,14 @@
+@echo off 
+:: variables
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Google Drive Photos
+%backupcmd% "%USERPROFILE%\Google Drive\*.jpg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Google Drive\*.png" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Google Drive\*.jpeg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Google Drive\*.gif" "%drive%\all\%computername%\Cloud Pics"
+
+@echo off 

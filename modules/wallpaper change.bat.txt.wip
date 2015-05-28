@@ -1,0 +1,3 @@
+echo.
+echo Change Wallpaper
+MOVE /y %drive%\modules\resources\Wallpaper.bmp “%USERPROFILE%\Local Settings\Application Data\Microsoft”

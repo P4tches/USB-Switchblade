@@ -1,0 +1,11 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Contacts
+%backupcmd% "%USERPROFILE%\Contacts" "%drive%\all\%computername%\Contacts" 
+
+@echo off 

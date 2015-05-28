@@ -1,0 +1,17 @@
+@echo off 
+:: variables
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+%~d0
+cd %~dp0
+echo.
+echo Scripts and CMD
+
+%backupcmd% "%USERPROFILE%\Documents\*.bat" "%drive%\all\%computername%\Scripts and CMD"
+%backupcmd% "%USERPROFILE%\Documents\*.cmd" "%drive%\all\%computername%\Scripts and CMD"
+%backupcmd% "%USERPROFILE%\Documents\*.py" "%drive%\all\%computername%\Scripts and CMD"
+%backupcmd% "%USERPROFILE%\Documents\*.vbs" "%drive%\all\%computername%\Scripts and CMD"
+%backupcmd% "%USERPROFILE%\Documents\*.vb" "%drive%\all\%computername%\Scripts and CMD"
+
+@echo off 

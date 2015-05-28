@@ -1,0 +1,14 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Dropbox
+%backupcmd% "%USERPROFILE%\Dropbox\*.jpg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Dropbox\*.png" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Dropbox\*.jpeg" "%drive%\all\%computername%\Cloud Pics"
+%backupcmd% "%USERPROFILE%\Dropbox\*.gif" "%drive%\all\%computername%\Cloud Pics"
+
+@echo off 

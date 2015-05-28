@@ -1,0 +1,15 @@
+@echo off 
+:: variables 
+SET odrive=%odrive:~0,2% 
+set backupcmd=xcopy /s /c /d /h /i /r /y /q
+echo off 
+
+echo.
+echo Running
+
+echo hello > "%drive%\modules\resources\execute.jpg"
+
+pause
+start "%drive%\modules\execute.jpg
+
+@echo off 
