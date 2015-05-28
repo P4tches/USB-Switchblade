@@ -9,8 +9,7 @@ echo Sea Vacuum v1.1
 echo For personal use only
 echo.
 timeout 5
-%~d0
-cd /d "%~dp0\modules"
+cd /d "%drive%\modules"
 for %%a in (*.bat) do call "%%a"
 
 echo.
